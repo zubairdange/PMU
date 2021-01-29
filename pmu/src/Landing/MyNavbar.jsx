@@ -64,7 +64,7 @@ export const MyNavbar = () => {
           <Dropdown as={NavItem}>
             <Dropdown.Toggle as={NavLink}>Sign In</Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item onClick={ LoginS}>Student</Dropdown.Item>
+              <Dropdown.Item>Student </Dropdown.Item>
               <Dropdown.Item>Parent</Dropdown.Item>
               <Dropdown.Item>Guest</Dropdown.Item>
             </Dropdown.Menu>
@@ -75,7 +75,7 @@ export const MyNavbar = () => {
 
       <Router>
         <Switch>
-          <Route path="/LoginS">
+          <Route path="/Student">
             <LoginS />
           </Route>
         </Switch>
