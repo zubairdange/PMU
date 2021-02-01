@@ -14,18 +14,29 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import logo from "../Landing/logo.png";
 import { Acadmics } from "./Acadmics";
 import { LoginS } from "../Login/LoginS";
+import { Booking } from "../Booking/Booking";
+import { Mycarousel } from "../Landing/Mycarousel";
+import { Aboutus } from "../Landing/Aboutus";
 
 export const MyNavbar = () => {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar
+        sticky="top"
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        variant="dark"
+      >
         <Navbar.Brand href="#home">
           <i>PMU </i>
           <img src={logo} style={{ width: 60, marginTop: -10 }} />
         </Navbar.Brand>
 
         <Nav>
-          <Nav.Link href="/Home">Home</Nav.Link>
+          <Nav.Link href="/Carousels">Home</Nav.Link>
+          {/* <Nav.Link href="/Carousels">Carousels</Nav.Link> */}
+
           <Nav.Link href="#">Study at PMU</Nav.Link>
           {/* <Nav.Link href="/Acadmics">Acadmics</Nav.Link> */}
           <NavDropdown title="Acadmics" id="collasible-nav-dropdown">
@@ -64,8 +75,8 @@ export const MyNavbar = () => {
           <Dropdown as={NavItem}>
             <Dropdown.Toggle as={NavLink}>Sign In</Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item>Student </Dropdown.Item>
-              <Dropdown.Item>Parent</Dropdown.Item>
+              <Dropdown.Item href="/LoginS">Student </Dropdown.Item>
+              <Dropdown.Item href="/Booking">Parent</Dropdown.Item>
               <Dropdown.Item>Guest</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -75,8 +86,17 @@ export const MyNavbar = () => {
 
       <Router>
         <Switch>
-          <Route path="/Student">
+          <Route path="/Carousels">
+            <Mycarousel />
+          </Route>
+          <Route path="/LoginS">
             <LoginS />
+          </Route>
+          <Route path="/Booking">
+            <Booking />
+          </Route>
+          <Route path="/Aboutus">
+            <Aboutus />
           </Route>
         </Switch>
       </Router>
